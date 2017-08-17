@@ -23,8 +23,6 @@ define BUFFER b-ttnam1 for ttname1.
 define BUFFER b-xtrain FOR ttxtrainfo.
 define BUFFER b-ttinfo FOR ttinfother.
  
-/*hDset:SET-BUFFER(BUffer b-ttname:handle,Buffer b-ttnam1:handle).*/
- 
 create b-ttname.
     ASSIGN
         b-ttname.v-name = "test"
