@@ -4,7 +4,7 @@ define var hRel  as handle no-undo.
 define temp-table ttname
           field v-name as char
           field v-age as inte.
- 
+          
 define temp-table ttname1
           field v-name as char serialize-hidden
           field v-pass as char.
