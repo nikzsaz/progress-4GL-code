@@ -35,8 +35,7 @@ create b-ttname.
     assign
        b-ttname.v-name = "test1"
        b-ttname.v-age  = 4.
- 
- 
+       
 create b-ttnam1.
     assign
         b-ttnam1.v-name = "test1"
