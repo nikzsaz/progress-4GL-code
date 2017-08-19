@@ -1,4 +1,4 @@
-define var hDset as handle no-undo.
+define var hDset as handle no-undo.      
 define var hRel  as handle no-undo.
  
 define temp-table ttname
