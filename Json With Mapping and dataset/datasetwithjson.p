@@ -1,6 +1,6 @@
 define var hDset as handle no-undo.      
 define var hRel  as handle no-undo.
- 
+
 define temp-table ttname
           field v-name as char
           field v-age as inte.
@@ -19,8 +19,11 @@ define temp-table ttinfother
           field friendname as char.
  
 define BUFFER b-ttname for ttname.
+
 define BUFFER b-ttnam1 for ttname1.
+
 define BUFFER b-xtrain FOR ttxtrainfo.
+
 define BUFFER b-ttinfo FOR ttinfother.
  
 create b-ttname.
@@ -57,13 +60,14 @@ END.
  
 CREATE b-ttinfo.
     ASSIGN
-        b-ttinfo.friendinfo = 1.
+        b-ttinfo.friendinfo = 1
         b-ttinfo.friendname = "Alex".
               
  
  
 define var lRetOK as logical no-undo.
  
+ /** this is just for display the sample**/
 for each b-ttname, each b-ttnam1:
     disp b-ttname.v-name b-ttname.v-age b-ttnam1.v-name b-ttnam1.v-pass.
 end.
