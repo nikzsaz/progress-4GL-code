@@ -1,6 +1,6 @@
 define var hDset as handle no-undo.      
 define var hRel  as handle no-undo.
-
+           
 define temp-table ttname
           field v-name as char
           field v-age as inte.
