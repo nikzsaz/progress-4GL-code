@@ -50,9 +50,7 @@ CREATE b-xtrain.
     ASSIGN
         b-xtrain.v-name = "test"
         b-xtrain.friendinfo = 1.
- 
 DEFINE VAR i AS inte INIT 0.
- 
 DO i = 1 TO 3:
     b-xtrain.extrainfo[i] = STRING(i) + "Helloworld".
 END.
@@ -62,8 +60,6 @@ CREATE b-ttinfo.
         b-ttinfo.friendinfo = 1
         b-ttinfo.friendname = "Alex".
               
- 
- 
 define var lRetOK as logical no-undo.
  
  /** this is just for display the sample**/
