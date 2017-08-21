@@ -1,4 +1,5 @@
-/** the obeservation is that do loop is faster than repaet**/DEFINE TEMP-TABLE aTempTable NO-UNDO
+/** the obeservation is that do loop is faster than repeat**/
+DEFINE TEMP-TABLE aTempTable NO-UNDO
  FIELD cTest AS CHARACTER.
 
 DEFINE VARIABLE i AS INTEGER NO-UNDO.
@@ -20,6 +21,7 @@ iMethodTime = ETIME.
 cResults = cResults + "do Method 2:" + STRING(iMethodTime).
 
 /*test with record creation*/
+
 ETIME(TRUE).
 REPEAT i = 1 TO {&NumLoops2}:
   CREATE aTempTable.
