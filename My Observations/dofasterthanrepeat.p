@@ -11,13 +11,13 @@ ETIME(TRUE).
 REPEAT i = 1 TO {&NumLoops}:
 END.
 iMethodTime = ETIME.
-cResults = cResults + "~n Method 1:" + STRING(iMethodTime).
+cResults = cResults + "repeat Method 1:" + STRING(iMethodTime).
 
 ETIME(TRUE).
 DO i = 1 TO {&NumLoops}:
 END.
 iMethodTime = ETIME.
-cResults = cResults + "~n Method 2:" + STRING(iMethodTime).
+cResults = cResults + "do Method 2:" + STRING(iMethodTime).
 
 /*test with record creation*/
 ETIME(TRUE).
@@ -25,7 +25,7 @@ REPEAT i = 1 TO {&NumLoops2}:
   CREATE aTempTable.
 END.
 iMethodTime = ETIME.
-cResults = cResults + "~n Method 1:" + STRING(iMethodTime).
+cResults = cResults + "repeat Method 1:" + STRING(iMethodTime).
 
 EMPTY TEMP-TABLE aTempTable.
 ETIME(TRUE).
@@ -34,5 +34,5 @@ DO i = 1 TO {&NumLoops2}:
 END.
 iMethodTime = ETIME.
 
-cResults = cResults + "~n Method 2:" + STRING(iMethodTime).
+cResults = cResults + "do Method 2:" + STRING(iMethodTime).
 MESSAGE cResults VIEW-AS ALERT-BOX.
