@@ -1,0 +1,51 @@
+DEFINE VARIABLE cxml AS LONGCHAR NO-UNDO.
+
+DEFINE TEMP-TABLE Customer
+FIELD ID AS INTEGER XML-NODE-TYPE "HIDDEN"
+FIELD Name AS CHARACTER
+.
+
+DEFINE TEMP-TABLE Orders
+FIELD Customer_ID AS INTEGER XML-NODE-TYPE "HIDDEN"
+FIELD Order_ID AS INTEGER XML-NODE-TYPE "HIDDEN"
+.
+
+DEFINE TEMP-TABLE Order
+FIELD ID AS INTEGER XML-NODE-TYPE "HIDDEN"
+FIELD Product AS CHARACTER
+FIELD Price AS DECIMAL
+.
+
+CREATE Customer.
+ASSIGN
+Customer.ID = 5367
+Customer.Name = "Some Customer"
+.
+
+CREATE Orders.
+ASSIGN
+Orders.Customer_ID = Customer.ID
+Orders.Order_ID = 123
+.
+CREATE Order.
+ASSIGN
+Order.ID = Orders.Order_ID
+Order.Product = "Widget"
+Order.Price = 59
+.
+CREATE Order.
+ASSIGN
+Order.ID = Orders.Order_ID
+Order.Product = "Something"
+.
+
+DEFINE DATASET Customers
+FOR Customer, Orders, Order
+DATA-RELATION FOR Customer, Orders RELATION-FIELDS( ID, Customer_ID ) NESTED FOREIGN-KEY-HIDDEN
+DATA-RELATION FOR Orders, Order RELATION-FIELDS( Order_ID, ID )
+NESTED FOREIGN-KEY-HIDDEN
+.
+
+DATASET Customers:WRITE-XML( "LONGCHAR", cxml, TRUE ).
+
+MESSAGE STRING( cxml ) VIEW-AS ALERT-BOX.
