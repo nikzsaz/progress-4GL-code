@@ -21,26 +21,24 @@ Customer.Name = "Some Customer".
 CREATE Orders.
 ASSIGN
 Orders.Customer_ID = Customer.ID
-Orders.Order_ID = 123
-.
+Orders.Order_ID = 123.
+
 CREATE Order.
 ASSIGN
 Order.ID = Orders.Order_ID
 Order.Product = "Widget"
-Order.Price = 59
-.
+Order.Price = 59.
+
 CREATE Order.
 ASSIGN
 Order.ID = Orders.Order_ID
-Order.Product = "Something"
-.
+Order.Product = "Something".
 
 DEFINE DATASET Customers
 FOR Customer, Orders, Order
 DATA-RELATION FOR Customer, Orders RELATION-FIELDS( ID, Customer_ID ) NESTED FOREIGN-KEY-HIDDEN
 DATA-RELATION FOR Orders, Order RELATION-FIELDS( Order_ID, ID )
-NESTED FOREIGN-KEY-HIDDEN
-.
+NESTED FOREIGN-KEY-HIDDEN.
 
 DATASET Customers:WRITE-XML( "LONGCHAR", cxml, TRUE ).
 
