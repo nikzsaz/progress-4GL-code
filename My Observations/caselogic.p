@@ -1,6 +1,6 @@
 define var v-deci as deci no-undo init 42.9.
 define var acceptval as logi no-undo init false.
-
+      
 /** whatever be the condition it will come inside**/
 case true:
     when acceptval and (v-deci >= 20 and v-deci <= 60)
