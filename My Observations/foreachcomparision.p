@@ -19,3 +19,4 @@ for each customer no-lock:
 end.
 disp etime.
 /**https://cg.tutorialspoint.com/embed/D00VqVsF/250/e7e7e7**/
+/**http://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm**/
