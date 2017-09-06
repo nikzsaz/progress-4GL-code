@@ -18,3 +18,4 @@ ETIME(YES).
 for each customer no-lock:
 end.
 disp etime.
+/**https://cg.tutorialspoint.com/embed/D00VqVsF/250/e7e7e7**/
